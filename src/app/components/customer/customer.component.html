@@ -1,0 +1,14 @@
+<table class="table table-striped">
+    <thead>
+      <tr>
+        <th scope="col">UserId</th>
+        <th scope="col">CompanyName</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr scope="row" *ngFor="let customer of customers">
+            <td>{{customer.userId}}</td>
+            <td>{{customer.companyName}}</td>
+        </tr>
+    </tbody>
+</table>

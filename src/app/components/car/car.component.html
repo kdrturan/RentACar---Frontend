@@ -1,0 +1,24 @@
+<table class="table table-striped">
+    <thead>
+      <tr>
+        <th scope="col">CarID</th>
+        <th scope="col">Brand</th>
+        <th scope="col">Color</th>
+        <th scope="col">Model Year</th>
+        <th scope="col">Daily Price</th>
+        <th scope="col">Description</th>
+        <th scope="col">Car Name</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr scope="row" *ngFor="let car of cars">
+            <td>{{car.carId}}</td>
+            <td>{{getBrandName(car.brandId) }}</td>
+            <td>{{getColorName(car.colorId) }}</td>
+            <td>{{car.modelYear}}</td>
+            <td>{{car.dailyPrice}}</td>
+            <td>{{car.description}}</td>
+            <td>{{car.carName}}</td>
+        </tr>
+    </tbody>
+  </table>
