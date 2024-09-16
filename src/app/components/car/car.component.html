@@ -13,8 +13,8 @@
     <tbody>
         <tr scope="row" *ngFor="let car of cars">
             <td>{{car.carId}}</td>
-            <td>{{getBrandName(car.brandId) }}</td>
-            <td>{{getColorName(car.colorId) }}</td>
+            <td>{{car.brandName}}</td>
+            <td>{{car.colorName }}</td>
             <td>{{car.modelYear}}</td>
             <td>{{car.dailyPrice}}</td>
             <td>{{car.description}}</td>

@@ -15,46 +15,22 @@ import { BrandService } from '../../services/brand.service';
 export class CarComponent implements OnInit{
 
   cars: Car[] = []
-  brands:Brand[] = []
-  colors:Color[] = []
-  constructor(private carService:CarService,
-              private colorService:ColorService,
-              private brandService:BrandService
+  constructor(private carService:CarService
   ){}
 
   
 
   ngOnInit(): void {
-    this.getBrands()
-    this.getColors()
+
     this.getCars()
   }
 
   getCars(){
-    this.carService.getCars().subscribe(response =>{
+    this.carService.getCars("getdetail").subscribe(response =>{
       this.cars = response.data
     })
   }
 
-  getColors(){
-    this.colorService.getColors().subscribe(response => {
-      this.colors = response.data
-    })
-  }
 
-  getBrands(){
-    this.brandService.getBrands().subscribe(response =>{
-      this.brands = response.data
-    })
-  }
-
-  getColorName(colorId:number){
-    return colorId ? this.colors.find(c => c.colorId == colorId)?.colorName: "Belirlenmemiş Renk"
-  }
-
-
-  getBrandName(brandId:number){
-    return brandId ? this.brands.find(c => c.brandId == brandId)?.brandName: "Belirlenmemiş Marka"
-  }
 
 }

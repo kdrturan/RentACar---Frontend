@@ -5,7 +5,7 @@ import { CustomerService } from '../../services/customer.service';
 
 @Component({
   selector: 'app-customer',
-  templateUrl: './customer.component.html',
+  templateUrl: './customer.component.html', 
   styleUrl: './customer.component.css'
 })
 export class CustomerComponent implements OnInit{
@@ -20,7 +20,7 @@ export class CustomerComponent implements OnInit{
   }
 
   getCustomers(){
-    this.customerService.getCustomers().subscribe(response =>{
+    this.customerService.getCustomers("getdetail").subscribe(response =>{
       this.customers = response.data
     })
   }

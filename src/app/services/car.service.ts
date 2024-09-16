@@ -9,11 +9,11 @@ import { Car } from '../models/car';
 })
 export class CarService {
 
-  apiUrl = "https://localhost:44387/api/cars/getall"
+  apiUrl = "https://localhost:44387/api/cars/"
   constructor(private htttpClient:HttpClient) { }
 
 
-  getCars():Observable<ListResponseModel<Car>>{
-    return this.htttpClient.get<ListResponseModel<Car>>(this.apiUrl)
+  getCars(url:string):Observable<ListResponseModel<Car>>{
+    return this.htttpClient.get<ListResponseModel<Car>>(this.apiUrl+url)
   }
 }

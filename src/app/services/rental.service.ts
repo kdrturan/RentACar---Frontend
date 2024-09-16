@@ -9,12 +9,12 @@ import { Observable } from 'rxjs';
 })
 export class RentalService {
 
-  apiUrl = "https://localhost:44387/api/rentals/getall"
+  apiUrl = "https://localhost:44387/api/rentals/"
   constructor(private httpClient:HttpClient) { }
 
 
-  getRentals():Observable<ListResponseModel<Rental>>{
-    return this.httpClient.get<ListResponseModel<Rental>>(this.apiUrl)
+  getRentals(url:string):Observable<ListResponseModel<Rental>>{
+    return this.httpClient.get<ListResponseModel<Rental>>(this.apiUrl+url)
   }
 
 }

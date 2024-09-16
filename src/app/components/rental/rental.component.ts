@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { RentalService } from '../../services/rental.service';
+import { Rental } from '../../models/rental';
 
 @Component({
   selector: 'app-rental',
@@ -7,10 +9,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class RentalComponent implements OnInit{
 
-  constructor(){}
+  rentals:Rental[] = []
+  constructor(private rentalService:RentalService){}
 
   ngOnInit(): void {
-    throw new Error('Method not implemented.');
+    this.getRentals()
   }
+
+  getRentals(){
+    this.rentalService.getRentals("getdetail").subscribe(response =>{
+      this.rentals = response.data
+    })
+  }
+
 
 }
