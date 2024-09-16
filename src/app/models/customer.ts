@@ -3,4 +3,4 @@ export interface Customer{
     userFirstName:string
     companyName:string
     
-}
+} 
